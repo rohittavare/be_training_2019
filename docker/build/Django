@@ -1,0 +1,5 @@
+FROM docker.io/python:3
+COPY . /pokemondb
+RUN pip install -r /pokemondb/requirements/base.txt
+WORKDIR /pokemondb/pokemondb
+CMD ["./manage.py", "runserver", "0.0.0.0:8000"]
